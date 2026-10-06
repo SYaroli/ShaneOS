@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#090b0f" />
+  <title>ShaneOS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-main">Shane<span>OS</span></div>
+        <div class="brand-sub">LOCAL FIRST • HOME THEATER • MEDIA • CONTROL • TARS</div>
+      </div>
+      <div class="clock-card">
+        <div id="clock" class="clock">--:--</div>
+        <div id="date" class="date">---</div>
+      </div>
+      <div class="status-grid">
+        <div class="status-card"><span class="label">TV</span><strong id="tvStatus">OFF</strong></div>
+        <div class="status-card"><span class="label">AVR</span><strong id="avrStatus">OFF</strong></div>
+        <div class="status-card"><span class="label">LAN</span><strong class="ok">LOCAL</strong></div>
+      </div>
+    </header>
+
+    <section class="activities">
+      <button class="activity" data-activity="movie"><span class="icon">🎬</span><span>MOVIE</span><small>Theater mode</small></button>
+      <button class="activity" data-activity="tv"><span class="icon">📺</span><span>TV</span><small>Streaming / Fire TV</small></button>
+      <button class="activity" data-activity="pc"><span class="icon">🖥️</span><span>PC</span><small>Desktop / Gaming</small></button>
+      <button class="activity" data-activity="music"><span class="icon">🎵</span><span>MUSIC</span><small>Stereo mode</small></button>
+    </section>
+
+    <section class="control-strip">
+      <div class="volume-panel panel">
+        <div class="knob-wrap">
+          <button id="volDown" class="round">−</button>
+          <div class="knob">
+            <div class="knob-center"><span id="volumeValue">-28</span><small>dB</small></div>
+          </div>
+          <button id="volUp" class="round">+</button>
+        </div>
+        <button id="muteBtn" class="mute">MUTE</button>
+      </div>
+
+      <div class="meters panel">
+        <div class="meter-block">
+          <div class="meter"><div id="meterL" class="needle"></div></div>
+          <span>L</span>
+        </div>
+        <div class="meter-block">
+          <div class="meter"><div id="meterR" class="needle"></div></div>
+          <span>R</span>
+        </div>
+      </div>
+
+      <div class="inputs panel">
+        <button data-input="TV">TV</button>
+        <button data-input="PC">PC</button>
+        <button data-input="GAME">GAME</button>
+        <button data-input="BD">BD</button>
+        <button data-input="AUX">AUX</button>
+      </div>
+    </section>
+
+    <section class="lower-grid">
+      <div class="panel card">
+        <h2>LIGHTS</h2>
+        <div class="mini-grid">
+          <button data-scene="bright">Bright</button>
+          <button data-scene="relax">Relax</button>
+          <button data-scene="movie">Movie</button>
+          <button data-scene="off">Off</button>
+        </div>
+      </div>
+      <div class="panel card">
+        <h2>DEVICES</h2>
+        <div class="device-list">
+          <span>Receiver <b id="devAvr" class="dot"></b></span>
+          <span>TV <b id="devTv" class="dot"></b></span>
+          <span>BroadLink <b class="dot amber"></b></span>
+          <span>NAS <b class="dot idle"></b></span>
+        </div>
+      </div>
+      <div class="panel card">
+        <h2>SYSTEM</h2>
+        <div class="system-list">
+          <span>Network <strong>LOCAL</strong></span>
+          <span>Control <strong>SIM</strong></span>
+          <span>Mode <strong id="modeValue">IDLE</strong></span>
+          <span>Internet <strong>OPTIONAL</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <button id="allOff" class="all-off">⏻ ALL OFF</button>
+      <div class="tars panel">
+        <strong>TARS:</strong>
+        <span id="tarsLine">Sit down, pick something, and enjoy it. I'll handle the rest.</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
